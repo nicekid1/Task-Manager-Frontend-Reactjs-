@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; 
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,7 @@ const Login = () => {
 
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
+  const navigate = useNavigate(); 
 
   const handleChange = (e) => {
     setFormData({
@@ -15,6 +17,7 @@ const Login = () => {
       [e.target.name]: e.target.value,
     });
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
@@ -30,6 +33,7 @@ const Login = () => {
         localStorage.setItem("token", token);
         setSuccess("Login successful.");
         setFormData({ username: "", password: "" });
+        navigate("/dashboard"); 
       } else {
         const errorMessage = await response.text();
         setError(errorMessage || "Something went wrong.");
@@ -39,6 +43,7 @@ const Login = () => {
       setError("Connection to the server failed.");
     }
   };
+
   return (
     <div className="login-container">
       <h2>Login</h2>
