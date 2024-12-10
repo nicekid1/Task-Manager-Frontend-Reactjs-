@@ -3,7 +3,7 @@ const Navigator = () => {
   return (
     <ul>
       <li>
-        <Link to="/">Register</Link>
+        <Link to="/register">Register</Link>
       </li>
       <li>
         <Link to="/login">Login</Link>
