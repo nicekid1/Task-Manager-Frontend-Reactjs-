@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import styles from './../styles/dashboard.module.css';
 
 const Dashboard = () => {
   const [tasks, setTasks] = useState([]);
@@ -7,6 +8,7 @@ const Dashboard = () => {
   const [error, setError] = useState(null);
 
   const token = localStorage.getItem("token");
+
   // Fetch tasks from the server
   const fetchTasks = async () => {
     setError(null);
@@ -68,7 +70,7 @@ const Dashboard = () => {
     }
   };
 
-  //Update a task
+  // Update a task
   const updateTask = async () => {
     try {
       const response = await fetch(
@@ -85,20 +87,21 @@ const Dashboard = () => {
       if (response.ok) {
         setEditTask({ id: null, title: "" });
         fetchTasks();
-      } else setError("There was a problem adding the task.");
+      } else setError("There was a problem updating the task.");
     } catch (err) {
       setError("Connection to the server failed.");
     }
   };
+
   useEffect(() => {
     fetchTasks();
   }, []);
 
   return (
-    <div>
+    <div className={styles["dashboard-container"]}>
       <h2>Dashboard</h2>
-      {error && <p>{error}</p>}
-      <div>
+      {error && <p className={styles.error}>{error}</p>}
+      <div className={styles["task-input"]}>
         <input
           type="text"
           placeholder="New task ..."
@@ -107,9 +110,9 @@ const Dashboard = () => {
         />
         <button onClick={addTask}>Add</button>
       </div>
-      <ul>
+      <ul className={styles["task-list"]}>
         {tasks.map((task) => (
-          <li key={task._id}>
+          <li key={task._id} className={styles["task-item"]}>
             {editTask.id === task._id ? (
               <>
                 <input

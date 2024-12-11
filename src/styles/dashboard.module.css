@@ -1,0 +1,121 @@
+/* General container styles */
+.dashboard-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.error {
+  color: #dc3545;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* Input and Add Task Button */
+.task-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.task-input input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  width: 70%;
+}
+
+.task-input button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.task-input button:hover {
+  background-color: #0056b3;
+}
+
+/* Task list styles */
+.task-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.task-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  width: 200px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-item span {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.task-item input[type="text"] {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  width: 90%;
+  margin-bottom: 10px;
+}
+
+/* Buttons inside task item */
+.task-item button {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 5px;
+}
+
+.task-item button:hover {
+  opacity: 0.9;
+}
+
+.task-item button:nth-child(2) {
+  background-color: #ffc107;
+}
+
+.task-item button:nth-child(3) {
+  background-color: #dc3545;
+}
+
+.task-item button:nth-child(4) {
+  background-color: #6c757d;
+}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"; 
+import styles from './../styles/login.module.css';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -45,12 +46,12 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
+    <div className={styles["login-container"]}>
       <h2>Login</h2>
-      {error && <p>{error}</p>}
-      {success && <p>{success}</p>}
+      {error && <p className={styles.error}>{error}</p>}
+      {success && <p className={styles.success}>{success}</p>}
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className={styles["form-group"]}>
           <label htmlFor="username">Username</label>
           <input
             type="text"
@@ -61,7 +62,7 @@ const Login = () => {
             required
           />
         </div>
-        <div>
+        <div className={styles["form-group"]}>
           <label htmlFor="password">Password</label>
           <input
             type="password"

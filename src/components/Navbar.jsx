@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-const Navigator = () => {
+import styles from './../styles/nav.module.css'
+const Navbar = () => {
   return (
-    <ul>
+    <ul className={styles}>
       <li>
         <Link to="/register">Register</Link>
       </li>
@@ -15,4 +16,4 @@ const Navigator = () => {
   );
 };
 
-export default Navigator;
+export default Navbar;

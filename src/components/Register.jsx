@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from './../styles/register.module.css';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -42,12 +43,12 @@ const Register = () => {
   };
 
   return (
-    <div className="register-container">
+    <div className={styles["register-container"]}>
       <h2>Register</h2>
-      {error && <p className="error">{error}</p>}
-      {success && <p className="success">{success}</p>}
+      {error && <p className={styles.error}>{error}</p>}
+      {success && <p className={styles.success}>{success}</p>}
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
+        <div className={styles["form-group"]}>
           <label htmlFor="username">Username:</label>
           <input
             type="text"
@@ -58,7 +59,7 @@ const Register = () => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className={styles["form-group"]}>
           <label htmlFor="password">Password:</label>
           <input
             type="password"
